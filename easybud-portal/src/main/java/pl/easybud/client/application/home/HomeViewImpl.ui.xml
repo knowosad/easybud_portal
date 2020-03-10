@@ -6,7 +6,7 @@
 
     <m:MaterialContainer>
 
-        <m:MaterialCard>
+        <m:MaterialCard margin="30">
             <m:MaterialContainer ui:field="tableContainer"/>
         </m:MaterialCard>
 

@@ -1,10 +1,22 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
-             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:m="urn:import:gwt.material.design.client.ui">
 
     <ui:with field="res" type="pl.easybud.client.resources.AppResources"/>
 
-    <g:HTMLPanel>
-        <p>Orders</p>
-    </g:HTMLPanel>
+    <!--<g:HTMLPanel>-->
+    <m:MaterialContainer>
+        <m:MaterialRow>
+            <m:MaterialButton ui:field="getOrders" text="Get Orders" waves="LIGHT" backgroundColor="blue" textColor="white" margin="30"/>
+        </m:MaterialRow>
+        <m:MaterialRow>
+            <!--<m:MaterialTextArea ui:field="textResult" placeholder="Text Area" length="120"/>-->
+            <m:MaterialTextArea ui:field="textResult" placeholder="Content" margin="30"/>
+        </m:MaterialRow>
+
+
+    </m:MaterialContainer>
+
+    <!--</g:HTMLPanel>-->
 
 </ui:UiBinder>

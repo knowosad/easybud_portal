@@ -6,6 +6,10 @@ import com.gwtplatform.mvp.client.View;
 
 public interface OrdersView extends View, HasUiHandlers<OrdersView.Handlers> {
 
+  void setContactsField(String textResult);
+
   interface Handlers extends UiHandlers {
+    void getOrders();
+
   }
 }
