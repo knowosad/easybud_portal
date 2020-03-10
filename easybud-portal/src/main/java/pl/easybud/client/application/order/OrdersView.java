@@ -1,12 +1,11 @@
-package pl.easybud.client.application.home;
+package pl.easybud.client.application.order;
 
 import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.UiHandlers;
 import com.gwtplatform.mvp.client.View;
 
-public interface HomeView extends View, HasUiHandlers<HomeView.Handlers> {
+public interface OrdersView extends View, HasUiHandlers<OrdersView.Handlers> {
 
   interface Handlers extends UiHandlers {
-
   }
 }

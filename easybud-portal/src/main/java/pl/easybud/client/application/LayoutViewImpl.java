@@ -7,6 +7,7 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
+import gwt.material.design.client.ui.MaterialColumn;
 
 public class LayoutViewImpl extends ViewWithUiHandlers<LayoutView.Handlers> implements LayoutView {
 
@@ -14,12 +15,12 @@ public class LayoutViewImpl extends ViewWithUiHandlers<LayoutView.Handlers> impl
     }
 
     @UiField
-    SimplePanel main;
+    MaterialColumn content;
 
     @Inject
     LayoutViewImpl(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
 
-        bindSlot(LayoutPresenter.SLOT_MAIN, main);
+        bindSlot(LayoutPresenter.SLOT_CONTENT, content);
     }
 }
