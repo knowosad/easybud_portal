@@ -1,9 +1,37 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
-        xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:m="urn:import:gwt.material.design.client.ui">
 
-    <g:HTMLPanel>
-        
-        <p>Hello world!</p>
-        
-    </g:HTMLPanel>
+    <ui:with field="res" type="pl.easybud.client.resources.AppResources"/>
+
+    <m:MaterialPanel>
+        <m:MaterialHeader>
+            <m:MaterialNavBar activates="mysidenav" backgroundColor="purple">
+                <m:MaterialNavBrand text="My App" paddingLeft="20"/>
+                <m:MaterialNavSection float="RIGHT">
+                    <m:MaterialLink text="Login" href="#login"/>
+                    <m:MaterialLink text="Signup" href="#signup"/>
+                </m:MaterialNavSection>
+            </m:MaterialNavBar>
+            <m:MaterialSideNav m:id="mysidenav" type="PUSH" width="280">
+                <m:MaterialLink text="Link 1" iconType="ACCESS_ALARM"/>
+                <m:MaterialLink text="Link 2" iconType="ACCESS_ALARM"/>
+                <m:MaterialLink text="Link 3" iconType="ACCESS_ALARM"/>
+                <m:MaterialLink text="Link 4" iconType="ACCESS_ALARM"/>
+                <m:MaterialLink text="Link 5" iconType="ACCESS_ALARM"/>
+            </m:MaterialSideNav>
+        </m:MaterialHeader>
+        <m:MaterialContainer>
+            <m:MaterialLabel text="This is main content" textAlign="CENTER"/>
+        </m:MaterialContainer>
+        <m:MaterialFAB>
+            <m:MaterialButton iconType="ADD" type="FLOATING" size="LARGE"/>
+            <m:MaterialFABList>
+                <m:MaterialButton iconType="ACCESS_TIME" backgroundColor="purple" tooltip="Access Time" tooltipPosition="LEFT" type="FLOATING"/>
+                <m:MaterialButton iconType="ACCESSIBLE" backgroundColor="orange" tooltip="Accessible" tooltipPosition="LEFT" type="FLOATING"/>
+                <m:MaterialButton iconType="AC_UNIT" backgroundColor="red" tooltip="AC Unit" tooltipPosition="LEFT" type="FLOATING"/>
+                <m:MaterialButton iconType="ZOOM_IN" backgroundColor="blue" tooltip="Zoom In" tooltipPosition="LEFT" type="FLOATING"/>
+            </m:MaterialFABList>
+        </m:MaterialFAB>
+    </m:MaterialPanel>
 </ui:UiBinder>

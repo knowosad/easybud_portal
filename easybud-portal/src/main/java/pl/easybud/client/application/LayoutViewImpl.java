@@ -6,19 +6,20 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
-import com.gwtplatform.mvp.client.ViewImpl;
+import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 
-public class ApplicationView extends ViewImpl implements ApplicationPresenter.MyView {
-    interface Binder extends UiBinder<Widget, ApplicationView> {
+public class LayoutViewImpl extends ViewWithUiHandlers<LayoutView.Handlers> implements LayoutView {
+
+    interface Binder extends UiBinder<Widget, LayoutViewImpl> {
     }
 
     @UiField
     SimplePanel main;
 
     @Inject
-    ApplicationView(Binder uiBinder) {
+    LayoutViewImpl(Binder uiBinder) {
         initWidget(uiBinder.createAndBindUi(this));
 
-        bindSlot(ApplicationPresenter.SLOT_MAIN, main);
+        bindSlot(LayoutPresenter.SLOT_MAIN, main);
     }
 }

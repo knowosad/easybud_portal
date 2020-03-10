@@ -1,6 +1,6 @@
 package pl.easybud.client.application.home;
 
-import pl.easybud.client.application.ApplicationPresenter;
+import pl.easybud.client.application.LayoutPresenter;
 import pl.easybud.client.place.NameTokens;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
@@ -24,6 +24,6 @@ public class HomePresenter extends Presenter<HomePresenter.MyView, HomePresenter
             EventBus eventBus,
             MyView view,
             MyProxy proxy) {
-        super(eventBus, view, proxy, ApplicationPresenter.SLOT_MAIN);
+        super(eventBus, view, proxy, LayoutPresenter.SLOT_MAIN);
     }
 }
