@@ -6,6 +6,11 @@
         <element id="directory" name="classes">
           <element id="module-output" name="easybud-portal" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.github.gwtmaterialdesign:gwt-material:1.5.1" />
+          <element id="library" level="project" name="Maven: com.github.gwtmaterialdesign:gwt-material-themes:1.5.1" />
+          <element id="library" level="project" name="Maven: com.github.gwtmaterialdesign:gwt-material-addins:1.5.1" />
+        </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/easybud-portal-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
