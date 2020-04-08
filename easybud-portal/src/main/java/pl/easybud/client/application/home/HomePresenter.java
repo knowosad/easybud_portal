@@ -7,16 +7,15 @@ import pl.easybud.client.place.NameTokens;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.Presenter;
-import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 
-public class HomePresenter extends Presenter<HomeView, HomePresenter.MyProxy> implements HomeView.Handlers {
+public class HomePresenter extends Presenter<HomeView, HomePresenter.HomeProxy> implements HomeView.Handlers {
 
     @ProxyStandard
     @NameToken(NameTokens.HOME)
-    interface MyProxy extends ProxyPlace<HomePresenter> {
+    interface HomeProxy extends ProxyPlace<HomePresenter> {
     }
 
     public static final PermanentSlot<OrdersPresenter> SLOT_ORDERS = new PermanentSlot<>();
@@ -24,11 +23,11 @@ public class HomePresenter extends Presenter<HomeView, HomePresenter.MyProxy> im
     private OrdersPresenter ordersPresenter;
 
     @Inject
-    HomePresenter(EventBus eventBus, HomeView view, MyProxy proxy, OrdersPresenter ordersPresenter) {
+    HomePresenter(EventBus eventBus, HomeView view, HomeProxy proxy, OrdersPresenter ordersPresenter) {
         super(eventBus, view, proxy, LayoutPresenter.SLOT_CONTENT);
-        this.ordersPresenter = ordersPresenter;
-
         getView().setUiHandlers(this);
+
+        this.ordersPresenter = ordersPresenter;
     }
 
     @Override

@@ -11,5 +11,7 @@ public interface OrdersView extends View, HasUiHandlers<OrdersView.Handlers> {
   interface Handlers extends UiHandlers {
     void getOrders();
 
+    void addOrder(String label, String name);
+
   }
 }

@@ -15,30 +15,51 @@ public class OrdersPresenter extends PresenterWidget<OrdersView> implements Orde
 
 
   @Inject
+  private ResourceDelegate<OrdersResource> ordersResource;
+
+  @Inject
   public OrdersPresenter(EventBus eventBus, OrdersView view) {
     super(eventBus, view);
 
     getView().setUiHandlers(this);
   }
 
-  @Inject
-  private ResourceDelegate<OrdersResource> ordersResource;
-
   @Override
   public void getOrders() {
       ordersResource.withCallback(new AsyncCallback<List<OrderDTO>>() {
         @Override
         public void onFailure(Throwable throwable) {
-          getView().setContactsField("ResourceDelegate failure");
+          getView().setContactsField("getOrders failure");
           GWT.log(throwable.getMessage());
 
         }
 
         @Override
         public void onSuccess(List<OrderDTO> orders) {
-          getView().setContactsField("ResourceDelegate success");
+          getView().setContactsField("getOrders success");
 
         }
       }).listOrders();
   }
+
+  @Override
+  public void addOrder(String label, String name) {
+    OrderDTO order = new OrderDTO();
+    order.setLabel(label);
+    order.setName(name);
+
+    ordersResource.withCallback(new AsyncCallback<OrderDTO>() {
+      @Override
+      public void onFailure(Throwable throwable) {
+        getView().setContactsField("addOrder failure");
+        GWT.log(throwable.getMessage());
+      }
+
+      @Override
+      public void onSuccess(OrderDTO orderDTO) {
+        getView().setContactsField("addOrder success");
+      }
+    }).addOrder(order);
+  }
+
 }
