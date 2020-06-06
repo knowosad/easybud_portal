@@ -10,7 +10,7 @@
 
         <m:MaterialCard>
             <m:MaterialRow>
-                <m:MaterialButton ui:field="addOrder" text="Add" waves="LIGHT" backgroundColor="blue" textColor="white"
+                <m:MaterialButton ui:field="addOrder" text="Add order" waves="LIGHT" backgroundColor="blue" textColor="white"
                                   margin="30"/>
             </m:MaterialRow>
             <m:MaterialRow>
